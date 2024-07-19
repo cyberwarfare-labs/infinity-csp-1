@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+		rel="stylesheet">
+	<title>HR Portal</title>
+	<style>
+		.card {
+			margin: 20px auto 20px auto;
+			padding: 60px;
+			height: 465px;
+			width: 40%;
+			border-radius: 30px;
+			background: blueviolet;
+		}
+
+		.card form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 50px;
+	}
+
+	.card input[type="text"],
+	.card input[type="date"] {
+		padding-top: 60px;
+		width: 70%;
+		padding: 20px;
+		margin-bottom: 15px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+	}
+
+	.card button {
+		padding: 18px 18px;
+		background-color: #007bff;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-top: 15px;
+		width: 80%;
+	}
+	.card .container {
+		text-align: center;
+		color: #fff;
+	}
+
+
+
+	</style>
+	<script>
+		window.onload = function () {
+			document.getElementById('siteForm').onsubmit = function (event) {
+				event.preventDefault();
+
+				// Create a new FormData object and append form data
+				var formData = new FormData(this);
+
+				// Send form data to process_form.php using fetch API
+				fetch('process.php', {
+					method: 'POST',
+					body: formData
+				})
+					.then(response => response.text())
+					.then(data => {
+						// Display thank you message with organization name
+						var thankYouMessage = document.getElementById('thankYouMessage');
+						thankYouMessage.innerHTML = "<h2>Thank you for your submission " + data + "!</h2>";
+
+						window.location.hash = '#thankYouMessage';
+					})
+					.catch(error => console.error('Error:', error));
+			};
+		};
+
+	</script>
+
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="menu">
+			<div class="leftmenu">
+				<a style="text-decoration:none" href="index.html"><img src="icon.png" alt="Icon" class="icon"></a>
+				<a style="text-decoration:none" href="index.html"></a>
+			</div>
+			<div class="rightmenu">
+				<ul>
+					<li id="firstlist"><a href="index.html">Home</a></li>
+					<li><a href="update.html">Login</a></li>
+					<li><a href="score.html">About Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="container">
+			<h1>Login Form</h1>
+			<form id="siteForm" action="#thankYouMessage">
+				<!-- <label for="ip" class="content-items">Email: </label> -->
+				<input type="text" id="ip" name="ip" placeholder="Enter Username" required>
+				<!-- <label for="org" class="content-items">Password: </label> -->
+				<input type="text" id="org" name="organization" placeholder="Enter Password" required>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+		<div id="thankYouMessage" class="thank-you-message">
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>© SecureCorp - All Rights Reserved </p>
+	</div>
+
+
+</body>
+
+</html>

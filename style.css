@@ -1,0 +1,78 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+    
+}
+
+
+.navbar {
+    background-color: navy;
+    width: 100%;        
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.leftmenu .icon {
+    width: 350px;
+    height: 6vh; 
+    margin-right: 10px; 
+}
+
+.rightmenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rightmenu ul li {
+    display: inline-block;
+    margin-right: 20px;
+    color: #fff;
+}
+
+.rightmenu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.footer {
+    background-color: navy;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+span {
+    color: #fff;
+}
+
+.container-first {
+    flex: 1;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+} 
+
+
+.container-first img {
+    max-width: 100%;
+    height: auto;
+}
