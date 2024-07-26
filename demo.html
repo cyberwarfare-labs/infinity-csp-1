@@ -13,46 +13,69 @@
 	<style>
 		.card {
 			margin: 20px auto 20px auto;
-			padding: 60px;
-			height: 465px;
+			/* padding: 60px; */
+			padding: 2%;
+			height: auto;
 			width: 40%;
 			border-radius: 30px;
 			background: blueviolet;
+			
+		}
+		.card h1{
+			margin-top: 0%;
+			margin-bottom: 0%;
+			
+		}
+		.card h2{
+			margin-top: 0%;
+			margin-bottom: 0%;
 		}
 
 		.card form {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		/* align-items: center; */
 		padding: 50px;
+		font-family: Roboto, sans-serif;
+		
+
 	}
 
-	.card input[type="text"],
-	.card input[type="date"] {
-		padding-top: 60px;
-		width: 70%;
-		padding: 20px;
-		margin-bottom: 15px;
-		border: 1px solid #ccc;
-		border-radius: 5px;
-	}
+	   .card input[type="text"],
+	   .card input[type="date"] {
+	   	padding-top: 10%;
+	   	width: 70%;
+	   	padding: 20px;
+	   	margin-bottom: 20px;
+	   	border: 1px solid #ccc;
+	   	border-radius: 5px;
+		align-self: center;
+	   }
 
-	.card button {
-		padding: 18px 18px;
-		background-color: #007bff;
-		color: #fff;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
-		margin-top: 15px;
-		width: 80%;
-	}
-	.card .container {
-		text-align: center;
-		color: #fff;
-	}
-
-
+	   .card label{
+			text-align: left;
+			margin-left: 11%;
+			margin-bottom: 2%;
+			font-family: "Gill Sans Extrabold", sans-serif;
+	   }
+   
+	   .card button {
+	   	padding: 18px 18px;
+	   	background-color: #007bff;
+	   	color: #fff;
+	   	border: none;
+	   	border-radius: 5px;
+	   	cursor: pointer;
+	   	margin-top: 15px;
+	   	width: 80%;
+		align-self: center;
+	   }
+	   .card .container {
+	   	text-align: center;
+	   	color: #fff;
+	   }
+   
+   
 
 	</style>
 	<script>
@@ -94,8 +117,8 @@
 			<div class="rightmenu">
 				<ul>
 					<li id="firstlist"><a href="index.html">Home</a></li>
-					<li><a href="update.html">Login</a></li>
-					<li><a href="score.html">About Us</a></li>
+					<li><a href="demo.html">Book Free Demo</a></li>
+					<li><a href="about.html">About Us</a></li>
 				</ul>
 			</div>
 		</div>
@@ -103,13 +126,18 @@
 
 	<div class="card">
 		<div class="container">
-			<h1>Login Form</h1>
+			<h1>Enter the Details</h1>
+			<h2>to experience the future of HRMS</h2>
 			<form id="siteForm" action="#thankYouMessage">
-				<!-- <label for="ip" class="content-items">Email: </label> -->
-				<input type="text" id="ip" name="ip" placeholder="Enter Username" required>
-				<!-- <label for="org" class="content-items">Password: </label> -->
-				<input type="text" id="org" name="organization" placeholder="Enter Password" required>
-				<button type="submit">Login</button>
+				<label for="name" class="content-items">Name </label>
+				<input type="text" id="name" name="name" placeholder="Enter Name" required>
+				<label for="ip" class="content-items">Company </label>
+				<input type="text" id="ip" name="ip" placeholder="Enter Company" required>
+				<label for="email" class="content-items">Email </label>
+				<input type="text" id="email" name="email" placeholder="Enter Email" required>
+				<label for="org" class="content-items">Phone: </label>
+				<input type="text" id="org" name="organization" placeholder="Enter Phone" required>
+				<button type="submit">Get A Free Demo</button>
 			</form>
 		</div>
 		<div id="thankYouMessage" class="thank-you-message">
